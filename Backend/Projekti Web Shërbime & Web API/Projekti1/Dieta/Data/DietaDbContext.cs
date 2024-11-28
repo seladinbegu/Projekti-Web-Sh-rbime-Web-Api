@@ -9,6 +9,6 @@ namespace Projekti1.Data
 
 
 
-        // public DbSet<Ushqimi> Dieta { get; set; }
+        public DbSet<Dieta> Dieta { get; set; }
     }
 }
