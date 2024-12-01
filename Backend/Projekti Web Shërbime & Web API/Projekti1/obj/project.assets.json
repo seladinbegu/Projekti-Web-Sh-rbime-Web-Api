@@ -8131,19 +8131,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\begus\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj",
       "projectName": "Projekti1",
-      "projectPath": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj",
-      "packagesPath": "C:\\Users\\begus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\begus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8151,6 +8151,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8212,7 +8213,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
