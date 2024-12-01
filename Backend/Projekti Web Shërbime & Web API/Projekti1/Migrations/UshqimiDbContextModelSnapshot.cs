@@ -56,8 +56,9 @@ namespace Projekti1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("Pershkrimi")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Pershkrimi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Proteina")
                         .HasColumnType("float");

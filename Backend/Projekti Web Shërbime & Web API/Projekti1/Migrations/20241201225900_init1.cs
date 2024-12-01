@@ -31,7 +31,7 @@ namespace Projekti1.Migrations
                     kaGluten = table.Column<bool>(type: "bit", nullable: false),
                     kaBulmet = table.Column<bool>(type: "bit", nullable: false),
                     Kategoria = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Pershkrimi = table.Column<long>(type: "bigint", nullable: false),
+                    Pershkrimi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataKrijimit = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

@@ -12,7 +12,7 @@ using Projekti1.Data;
 namespace Projekti1.Migrations
 {
     [DbContext(typeof(UshqimiDbContext))]
-    [Migration("20241125184157_init1")]
+    [Migration("20241201225900_init1")]
     partial class init1
     {
         /// <inheritdoc />
@@ -59,8 +59,9 @@ namespace Projekti1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("Pershkrimi")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Pershkrimi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Proteina")
                         .HasColumnType("float");
