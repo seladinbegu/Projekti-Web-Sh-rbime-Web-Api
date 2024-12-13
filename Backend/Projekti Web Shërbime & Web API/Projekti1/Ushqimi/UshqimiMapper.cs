@@ -24,7 +24,8 @@ public static class UshqimiMapper
             kaBulmet = ushqimiModel.kaBulmet,
             Kategoria = ushqimiModel.Kategoria,
             Pershkrimi = ushqimiModel.Pershkrimi,
-            DataKrijimit = ushqimiModel.DataKrijimit
+            DataKrijimit = ushqimiModel.DataKrijimit,
+            ImagePath = ushqimiModel.ImagePath
         };
     }
 
@@ -47,7 +48,8 @@ public static class UshqimiMapper
             kaBulmet = ushqimiDto.kaBulmet,
             Kategoria = ushqimiDto.Kategoria,
             Pershkrimi = ushqimiDto.Pershkrimi,
-            DataKrijimit = ushqimiDto.DataKrijimit
+            DataKrijimit = ushqimiDto.DataKrijimit,
+            ImagePath = ushqimiDto.ImagePath
         };
     }
 

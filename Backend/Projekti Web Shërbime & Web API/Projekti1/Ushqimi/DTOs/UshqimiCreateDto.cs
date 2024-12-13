@@ -22,5 +22,8 @@ public class UshqimiCreateDto
 
     public DateTime DataKrijimit { get; set; } = DateTime.Now;
 
+    public string ImagePath { get; set; }
+
+
 
 }

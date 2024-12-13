@@ -259,6 +259,7 @@ C:\Users\User\Desktop\Projekti-Web-Sh-rbime-Web-Api\Backend\Projekti Web Shërbi
 C:\Users\User\Desktop\Projekti-Web-Sh-rbime-Web-Api\Backend\Projekti Web Shërbime & Web API\Projekti1\obj\Debug\net8.0\ref\Projekti1.dll
 C:\Users\begus\OneDrive\Desktop\Projekti-Web-Sh-rbime-Web-Api\Backend\Projekti Web Shërbime & Web API\Projekti1\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\begus\OneDrive\Desktop\Projekti-Web-Sh-rbime-Web-Api\Backend\Projekti Web Shërbime & Web API\Projekti1\bin\Debug\net8.0\appsettings.json
+C:\Users\begus\OneDrive\Desktop\Projekti-Web-Sh-rbime-Web-Api\Backend\Projekti Web Shërbime & Web API\Projekti1\bin\Debug\net8.0\Projekti1.staticwebassets.runtime.json
 C:\Users\begus\OneDrive\Desktop\Projekti-Web-Sh-rbime-Web-Api\Backend\Projekti Web Shërbime & Web API\Projekti1\bin\Debug\net8.0\Projekti1.exe
 C:\Users\begus\OneDrive\Desktop\Projekti-Web-Sh-rbime-Web-Api\Backend\Projekti Web Shërbime & Web API\Projekti1\bin\Debug\net8.0\Projekti1.deps.json
 C:\Users\begus\OneDrive\Desktop\Projekti-Web-Sh-rbime-Web-Api\Backend\Projekti Web Shërbime & Web API\Projekti1\bin\Debug\net8.0\Projekti1.runtimeconfig.json

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projekti1.Data;
 
@@ -11,9 +12,11 @@ using Projekti1.Data;
 namespace Projekti1.Migrations
 {
     [DbContext(typeof(UshqimiDbContext))]
-    partial class UshqimiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241213195001_init13213123")]
+    partial class init13213123
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

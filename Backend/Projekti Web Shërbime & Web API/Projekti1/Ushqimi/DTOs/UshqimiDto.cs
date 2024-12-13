@@ -19,6 +19,11 @@ public class UshqimiDto
     public string Kategoria { get; set; }
     public string Pershkrimi { get; set; }
 
+
     public DateTime DataKrijimit { get; set; } = DateTime.Now;
+
+
+    public string ImagePath { get; set; }
+
 
 }

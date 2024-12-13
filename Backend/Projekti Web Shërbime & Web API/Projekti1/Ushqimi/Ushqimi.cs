@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using Projekti1.M2MRelations;
 
 namespace Projekti1.Models
 {
@@ -22,6 +23,15 @@ namespace Projekti1.Models
         public bool kaBulmet { get; set; }
         public string Kategoria { get; set; }
         public string Pershkrimi { get; set; }
+        public string ImagePath { get; set; }
         public DateTime DataKrijimit { get; set; } = DateTime.Now;
+
+
+
+
+
+
+        public ICollection<DietaUshqimi> DietaUshqimi { get; set; }
+
     }
 }

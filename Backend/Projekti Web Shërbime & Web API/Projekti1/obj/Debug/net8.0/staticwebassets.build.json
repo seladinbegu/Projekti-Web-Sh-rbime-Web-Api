@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "jkqPu7/cv8ikjZcgnfbqPBRxQ97lgxUIOX62Y6N8MQw=",
+  "Hash": "wXRrfIh5SLHKNZsJvnNpK7qzSYQHX4v2IHeKdseRU6U=",
   "Source": "Projekti1",
   "BasePath": "_content/Projekti1",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Projekti1\\wwwroot",
+      "Source": "Projekti1",
+      "ContentRoot": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
+      "BasePath": "_content/Projekti1",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\pizza.jpg",
+      "SourceId": "Projekti1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
+      "BasePath": "_content/Projekti1",
+      "RelativePath": "images/pizza.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\pizza.jpg"
+    }
+  ]
 }

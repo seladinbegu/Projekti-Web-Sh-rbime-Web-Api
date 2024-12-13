@@ -1,5 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Projekti1.Data;
+using System.IO;
+using System.Threading.Tasks;
+using System.Linq;
+using System;
 
 namespace Projekti1.Controllers
 {
@@ -14,24 +19,12 @@ namespace Projekti1.Controllers
             _context = context;
         }
 
-
-
-
-
-
-
-
-
         [HttpGet]
         public IActionResult Get()
         {
             var ushqimi = _context.Ushqimi.ToList().Select(s => s.toUshqimiDto());
             return Ok(ushqimi);
         }
-
-
-
-
 
         [HttpGet("{id}")]
         public IActionResult GetById([FromRoute] int id)
@@ -43,40 +36,38 @@ namespace Projekti1.Controllers
                 return NotFound();
             }
             return Ok(ushqimi.toUshqimiDto());
-
         }
-
-
-
-
-
-
-
 
         [HttpPost]
         public IActionResult Create([FromBody] UshqimiCreateDto ushqimiDto)
         {
-            // Directly map and save the new book
+            // Convert the DTO to the model
             var ushqimiModel = ushqimiDto.toUshqimiFromCreateDto();
+
+            // Check if ImagePath is provided and update accordingly
+            if (!string.IsNullOrEmpty(ushqimiDto.ImagePath))
+            {
+                ushqimiModel.ImagePath = "images/" + ushqimiDto.ImagePath; // Store relative path
+            }
+
+            // Add the model to the database and save changes
             _context.Ushqimi.Add(ushqimiModel);
             _context.SaveChanges();
 
-            // Return the created book's data with a 201 Created status
+            // Return the created resource with the appropriate response
             return CreatedAtAction(nameof(GetById), new { id = ushqimiModel.Id }, ushqimiModel.toUshqimiDto());
         }
-
 
         [HttpPut("{id}")]
         public IActionResult Update([FromRoute] int id, [FromBody] UshqimiUpdateDto updateDto)
         {
-            // Retrieve the existing Ushqimi item from the database
             var ushqimiModel = _context.Ushqimi.FirstOrDefault(b => b.Id == id);
             if (ushqimiModel == null)
             {
-                return NotFound(); // Return 404 if the item is not found
+                return NotFound();
             }
 
-            // Update the properties from the DTO
+            // Update the properties from updateDto
             ushqimiModel.Emri = updateDto.Emri;
             ushqimiModel.Kalori = updateDto.Kalori;
             ushqimiModel.Proteina = updateDto.Proteina;
@@ -93,18 +84,18 @@ namespace Projekti1.Controllers
             ushqimiModel.Kategoria = updateDto.Kategoria;
             ushqimiModel.Pershkrimi = updateDto.Pershkrimi;
 
-            // Optionally update the DataKrijimit if needed (e.g., to not overwrite)
-            // ushqimiModel.DataKrijimit = DateTime.Now; // If you want to change it
+            // Handle the image path update if provided
+            if (!string.IsNullOrEmpty(updateDto.ImagePath))
+            {
+                ushqimiModel.ImagePath = "images/" + updateDto.ImagePath; // Store relative path
+            }
 
-            // Save changes to the database
+            // Save changes
             _context.SaveChanges();
 
-            // Return the updated model as a response (optionally, using a DTO for the response)
-            return Ok(ushqimiModel); // Or `return Ok(ushqimiModel.toDietaDto());` if using a DTO for the response
+            return Ok(ushqimiModel);
         }
 
-
-        // Delete a diet by ID
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -118,16 +109,41 @@ namespace Projekti1.Controllers
             _context.Ushqimi.Remove(ushqimi);
             _context.SaveChanges();
 
-            return NoContent(); // 204 No Content for successful delete
+            return NoContent();
         }
 
+        [HttpPost("upload")]
+        public async Task<IActionResult> UploadImage(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("No file uploaded.");
 
+            var uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
 
+            if (!Directory.Exists(uploadDirectory))
+            {
+                Directory.CreateDirectory(uploadDirectory);
+            }
 
+            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+            var filePath = Path.Combine(uploadDirectory, fileName);
 
+            try
+            {
+                // Save the file
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
 
-
-
-
+                // Return the relative path to the image
+                var imagePath = Path.Combine("images", fileName); // This is the relative path
+                return Ok(new { ImagePath = imagePath });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error: " + ex.Message);
+            }
+        }
     }
 }
