@@ -41,8 +41,14 @@ namespace Projekti1.Migrations.DietaDb
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+<<<<<<< HEAD
                     b.Property<long>("Pershkrimi")
                         .HasColumnType("bigint");
+=======
+                    b.Property<string>("Pershkrimi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+>>>>>>> 211257715d6938b6476daf421c3ea37b8d892795
 
                     b.HasKey("Id");
 

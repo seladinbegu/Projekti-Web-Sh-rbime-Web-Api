@@ -17,8 +17,13 @@ public class UshqimiDto
     public bool kaGluten { get; set; }
     public bool kaBulmet { get; set; }
     public string Kategoria { get; set; }
-    public long Pershkrimi { get; set; }
+    public string Origjina { get; set; }
+
 
     public DateTime DataKrijimit { get; set; } = DateTime.Now;
+
+
+    public string ImagePath { get; set; }
+
 
 }

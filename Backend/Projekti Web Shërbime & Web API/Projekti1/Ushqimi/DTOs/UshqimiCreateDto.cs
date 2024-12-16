@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 public class UshqimiCreateDto
 {
@@ -16,8 +17,13 @@ public class UshqimiCreateDto
     public bool kaGluten { get; set; }
     public bool kaBulmet { get; set; }
     public string Kategoria { get; set; }
-    public long Pershkrimi { get; set; }
+    public string Origjina { get; set; }
+    [JsonIgnore]
+
     public DateTime DataKrijimit { get; set; } = DateTime.Now;
+
+    public string ImagePath { get; set; }
+
 
 
 }

@@ -62,8 +62,7 @@
               "RelativeToolTip": "Projekti1.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-25T18:27:35.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T18:27:35.032Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "Ushqimi\\DTOs\\UshqimiCreateDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T18:08:12.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T18:08:12.381Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "Ushqimi\\UshqimiMapper.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T18:02:40.71Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T18:02:40.71Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "Ushqimi\\UshqimiController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T18:02:22.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T18:02:22.08Z"
             },
             {
               "$type": "Document",
@@ -127,8 +123,7 @@
               "RelativeToolTip": "Ushqimi\\Ushqimi.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T17:54:29.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T17:54:29.378Z"
             },
             {
               "$type": "Document",
@@ -140,8 +135,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T17:32:01.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T17:32:01.712Z"
             },
             {
               "$type": "Document",
@@ -153,8 +147,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-25T17:42:46.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T17:42:46.766Z"
             },
             {
               "$type": "Document",
@@ -166,8 +159,7 @@
               "RelativeToolTip": "Ushqimi\\DTOs\\UshqimiUpdateDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T18:11:42.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T18:11:42.516Z"
             },
             {
               "$type": "Document",
@@ -179,8 +171,7 @@
               "RelativeToolTip": "Ushqimi\\Data\\UshqimiDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T17:54:19.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T17:54:19.576Z"
             }
           ]
         }
