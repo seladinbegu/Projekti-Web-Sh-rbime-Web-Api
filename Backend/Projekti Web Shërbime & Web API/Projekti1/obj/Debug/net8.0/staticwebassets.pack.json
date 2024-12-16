@@ -1,8 +1,28 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\257f2caa-7f10-4ff2-a698-f308ccef014a.jpg",
+      "PackagePath": "staticwebassets\\images\\257f2caa-7f10-4ff2-a698-f308ccef014a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\37d528c8-0b76-4cac-9252-f9cf8d428f3a.jpg",
+      "PackagePath": "staticwebassets\\images\\37d528c8-0b76-4cac-9252-f9cf8d428f3a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\bc841911-2f82-4c42-b152-62a59e141051.jpg",
+      "PackagePath": "staticwebassets\\images\\bc841911-2f82-4c42-b152-62a59e141051.jpg"
+    },
+    {
+      "Id": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.jpg",
+      "PackagePath": "staticwebassets\\images\\ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.jpg"
+    },
+    {
       "Id": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\pizza.jpg",
       "PackagePath": "staticwebassets\\images\\pizza.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Projekti1.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Projekti1.Microsoft.AspNetCore.StaticWebAssets.props",

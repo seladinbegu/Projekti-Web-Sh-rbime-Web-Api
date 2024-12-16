@@ -25,3 +25,5 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\begus\OneDrive\Desktop\Projekti-Web-Sh-rbime-Web-Api\Backend\Projekti Web Shërbime & Web API\Projekti1
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 

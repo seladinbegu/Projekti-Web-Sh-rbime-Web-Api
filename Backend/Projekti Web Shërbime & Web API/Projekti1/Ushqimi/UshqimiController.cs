@@ -4,12 +4,16 @@ using Projekti1.Data;
 using System.IO;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Projekti1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
+
     public class UshqimiController : ControllerBase
     {
         private readonly UshqimiDbContext _context;
@@ -19,17 +23,21 @@ namespace Projekti1.Controllers
             _context = context;
         }
 
+        // GET: api/Ushqimi
         [HttpGet]
-        public IActionResult Get()
+        [AllowAnonymous]
+        public async Task<IActionResult> Get()
         {
-            var ushqimi = _context.Ushqimi.ToList().Select(s => s.toUshqimiDto());
-            return Ok(ushqimi);
+            var ushqimi = await _context.Ushqimi.ToListAsync();
+            var result = ushqimi.Select(s => s.toUshqimiDto());
+            return Ok(result);
         }
 
+        // GET: api/Ushqimi/{id}
         [HttpGet("{id}")]
-        public IActionResult GetById([FromRoute] int id)
+        public async Task<IActionResult> GetById([FromRoute] int id)
         {
-            var ushqimi = _context.Ushqimi.Find(id);
+            var ushqimi = await _context.Ushqimi.FindAsync(id);
 
             if (ushqimi == null)
             {
@@ -41,33 +49,31 @@ namespace Projekti1.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] UshqimiCreateDto ushqimiDto)
         {
-            // Convert the DTO to the model
+            // Directly map and save the new diet
             var ushqimiModel = ushqimiDto.toUshqimiFromCreateDto();
-
-            // Check if ImagePath is provided and update accordingly
-            if (!string.IsNullOrEmpty(ushqimiDto.ImagePath))
-            {
-                ushqimiModel.ImagePath = "images/" + ushqimiDto.ImagePath; // Store relative path
-            }
-
-            // Add the model to the database and save changes
             _context.Ushqimi.Add(ushqimiModel);
             _context.SaveChanges();
 
-            // Return the created resource with the appropriate response
+            // Return the created diet's data with a 201 Created status
             return CreatedAtAction(nameof(GetById), new { id = ushqimiModel.Id }, ushqimiModel.toUshqimiDto());
         }
 
+        // PUT: api/Ushqimi/{id}
         [HttpPut("{id}")]
-        public IActionResult Update([FromRoute] int id, [FromBody] UshqimiUpdateDto updateDto)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UshqimiUpdateDto updateDto)
         {
-            var ushqimiModel = _context.Ushqimi.FirstOrDefault(b => b.Id == id);
+            if (updateDto == null)
+            {
+                return BadRequest("Update data is invalid.");
+            }
+
+            var ushqimiModel = await _context.Ushqimi.FirstOrDefaultAsync(b => b.Id == id);
             if (ushqimiModel == null)
             {
                 return NotFound();
             }
 
-            // Update the properties from updateDto
+            // Update properties from updateDto
             ushqimiModel.Emri = updateDto.Emri;
             ushqimiModel.Kalori = updateDto.Kalori;
             ushqimiModel.Proteina = updateDto.Proteina;
@@ -82,24 +88,21 @@ namespace Projekti1.Controllers
             ushqimiModel.kaGluten = updateDto.kaGluten;
             ushqimiModel.kaBulmet = updateDto.kaBulmet;
             ushqimiModel.Kategoria = updateDto.Kategoria;
-            ushqimiModel.Pershkrimi = updateDto.Pershkrimi;
+            ushqimiModel.Origjina = updateDto.Origjina;
+            ushqimiModel.ImagePath = updateDto.ImagePath;
 
-            // Handle the image path update if provided
-            if (!string.IsNullOrEmpty(updateDto.ImagePath))
-            {
-                ushqimiModel.ImagePath = "images/" + updateDto.ImagePath; // Store relative path
-            }
 
             // Save changes
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Ok(ushqimiModel);
         }
 
+        // DELETE: api/Ushqimi/{id}
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var ushqimi = _context.Ushqimi.Find(id);
+            var ushqimi = await _context.Ushqimi.FindAsync(id);
 
             if (ushqimi == null)
             {
@@ -107,43 +110,12 @@ namespace Projekti1.Controllers
             }
 
             _context.Ushqimi.Remove(ushqimi);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        [HttpPost("upload")]
-        public async Task<IActionResult> UploadImage(IFormFile file)
-        {
-            if (file == null || file.Length == 0)
-                return BadRequest("No file uploaded.");
+        // POST: api/Ushqimi/upload
 
-            var uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-
-            if (!Directory.Exists(uploadDirectory))
-            {
-                Directory.CreateDirectory(uploadDirectory);
-            }
-
-            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-            var filePath = Path.Combine(uploadDirectory, fileName);
-
-            try
-            {
-                // Save the file
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await file.CopyToAsync(stream);
-                }
-
-                // Return the relative path to the image
-                var imagePath = Path.Combine("images", fileName); // This is the relative path
-                return Ok(new { ImagePath = imagePath });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Internal server error: " + ex.Message);
-            }
-        }
     }
 }

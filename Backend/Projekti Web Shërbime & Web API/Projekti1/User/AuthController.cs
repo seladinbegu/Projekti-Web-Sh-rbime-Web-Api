@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Projekti1.User
 {
@@ -210,6 +211,7 @@ namespace Projekti1.User
 
 
         [HttpGet("users")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = _userManager.Users.ToList();
@@ -230,10 +232,35 @@ namespace Projekti1.User
 
 
 
+        [HttpGet("users/by-username")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetUserByUsername([FromQuery] string username)
+        {
+            if (string.IsNullOrEmpty(username))
+            {
+                return BadRequest(new { Message = "Username is required." });
+            }
 
+            var user = await _userManager.FindByNameAsync(username);
+            if (user == null)
+            {
+                return NotFound(new { Message = $"User with username {username} not found." });
+            }
+
+            var userDto = new
+            {
+                user.Id,
+                user.UserName,
+                user.Email
+            };
+
+            return Ok(userDto);
+        }
 
 
         [HttpDelete("users/{id}")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> DeleteUserById(string id)
         {
             // Find the user by their ID

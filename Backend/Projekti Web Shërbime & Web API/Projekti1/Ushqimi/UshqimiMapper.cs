@@ -23,7 +23,7 @@ public static class UshqimiMapper
             kaGluten = ushqimiModel.kaGluten,
             kaBulmet = ushqimiModel.kaBulmet,
             Kategoria = ushqimiModel.Kategoria,
-            Pershkrimi = ushqimiModel.Pershkrimi,
+            Origjina = ushqimiModel.Origjina,
             DataKrijimit = ushqimiModel.DataKrijimit,
             ImagePath = ushqimiModel.ImagePath
         };
@@ -47,7 +47,7 @@ public static class UshqimiMapper
             kaGluten = ushqimiDto.kaGluten,
             kaBulmet = ushqimiDto.kaBulmet,
             Kategoria = ushqimiDto.Kategoria,
-            Pershkrimi = ushqimiDto.Pershkrimi,
+            Origjina = ushqimiDto.Origjina,
             DataKrijimit = ushqimiDto.DataKrijimit,
             ImagePath = ushqimiDto.ImagePath
         };
