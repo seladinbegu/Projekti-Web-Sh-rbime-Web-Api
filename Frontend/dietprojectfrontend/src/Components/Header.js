@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../Images/PRTENIUMLOGO.png";
 import { FaUserCircle } from "react-icons/fa"; // Import Font Awesome icon
 
-
-const Header = ({ isLoggedIn, handleLogout, role, username}) => {
+const Header = ({ isLoggedIn, handleLogout, role, username }) => {
   const navigate = useNavigate();
 
   // Handle login click - redirects to login page
@@ -48,6 +47,12 @@ const Header = ({ isLoggedIn, handleLogout, role, username}) => {
         </button>
         <button
           className="px-6 py-3 bg-gradient-to-b from-purple-600 to-pink-500 text-white font-semibold rounded-md shadow-lg transform transition-all duration-300 hover:scale-110"
+          onClick={() => navigate("/dieta")}
+        >
+          Dieta
+        </button>
+        <button
+          className="px-6 py-3 bg-gradient-to-b from-purple-600 to-pink-500 text-white font-semibold rounded-md shadow-lg transform transition-all duration-300 hover:scale-110"
           onClick={() => navigate("/about")}
         >
           About
@@ -62,14 +67,11 @@ const Header = ({ isLoggedIn, handleLogout, role, username}) => {
         {/* User Section */}
         {isLoggedIn ? (
           <div className="flex items-center gap-2 cursor-pointer">
-           <FaUserCircle
-  className="w-10 h-10 text-white cursor-pointer hover:text-gray-300 transition duration-300"
-  onClick={() => navigate("/profile")}
-/>
-<span>{role === "Admin" ? `${username} (Admin)` : username}</span>
-
-            {/* Conditionally render Test button for Admin role */}
-           
+            <FaUserCircle
+              className="w-10 h-10 text-white cursor-pointer hover:text-gray-300 transition duration-300"
+              onClick={() => navigate("/profile")}
+            />
+            <span>{role === "Admin" ? `${username} (Admin)` : username}</span>
 
             <button
               className="px-4 py-2 bg-gradient-to-b from-red-600 to-red-500 text-white font-semibold rounded-md shadow-lg transform transition-all duration-300 hover:scale-110"

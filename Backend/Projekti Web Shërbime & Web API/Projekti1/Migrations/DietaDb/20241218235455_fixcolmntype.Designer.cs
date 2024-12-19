@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projekti1.Data;
 
@@ -11,9 +12,11 @@ using Projekti1.Data;
 namespace Projekti1.Migrations.DietaDb
 {
     [DbContext(typeof(DietaDbContext))]
-    partial class DietaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241218235455_fixcolmntype")]
+    partial class fixcolmntype
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,7 +45,7 @@ namespace Projekti1.Migrations.DietaDb
 
                     b.HasIndex("UshqimiId");
 
-                    b.ToTable("DietaUshqimi", (string)null);
+                    b.ToTable("DietaUshqimi");
                 });
 
             modelBuilder.Entity("Projekti1.Models.Dieta", b =>
@@ -70,7 +73,7 @@ namespace Projekti1.Migrations.DietaDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("Dieta", (string)null);
+                    b.ToTable("Dieta");
                 });
 
             modelBuilder.Entity("Projekti1.Models.Ushqimi", b =>
@@ -138,7 +141,7 @@ namespace Projekti1.Migrations.DietaDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ushqimi", (string)null);
+                    b.ToTable("Ushqimi");
                 });
 
             modelBuilder.Entity("Projekti1.M2MRelations.DietaUshqimi", b =>

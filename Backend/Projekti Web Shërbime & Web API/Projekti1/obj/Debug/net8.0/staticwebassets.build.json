@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MOsZ7jqvbi/ZONf33+zqV0CSIkJ0JwiMjsfnXeec+f4=",
+  "Hash": "2WKJ4jS7Fw7/xZhcd9CNQ5liur2a7fwYFhSdKbd6rXk=",
   "Source": "Projekti1",
   "BasePath": "_content/Projekti1",
   "Mode": "Default",
@@ -10,528 +10,106 @@
     {
       "Name": "Projekti1\\wwwroot",
       "Source": "Projekti1",
-      "ContentRoot": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
       "BasePath": "_content/Projekti1",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\257f2caa-7f10-4ff2-a698-f308ccef014a.jpg",
+      "Identity": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\257f2caa-7f10-4ff2-a698-f308ccef014a.jpg",
       "SourceId": "Projekti1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
       "BasePath": "_content/Projekti1",
-      "RelativePath": "images/257f2caa-7f10-4ff2-a698-f308ccef014a#[.{fingerprint}]?.jpg",
+      "RelativePath": "images/257f2caa-7f10-4ff2-a698-f308ccef014a.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d80otgbacf",
-      "Integrity": "LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\257f2caa-7f10-4ff2-a698-f308ccef014a.jpg"
     },
     {
-      "Identity": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\37d528c8-0b76-4cac-9252-f9cf8d428f3a.jpg",
+      "Identity": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\37d528c8-0b76-4cac-9252-f9cf8d428f3a.jpg",
       "SourceId": "Projekti1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
       "BasePath": "_content/Projekti1",
-      "RelativePath": "images/37d528c8-0b76-4cac-9252-f9cf8d428f3a#[.{fingerprint}]?.jpg",
+      "RelativePath": "images/37d528c8-0b76-4cac-9252-f9cf8d428f3a.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d80otgbacf",
-      "Integrity": "LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\37d528c8-0b76-4cac-9252-f9cf8d428f3a.jpg"
     },
     {
-      "Identity": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\bc841911-2f82-4c42-b152-62a59e141051.jpg",
+      "Identity": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\bc841911-2f82-4c42-b152-62a59e141051.jpg",
       "SourceId": "Projekti1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
       "BasePath": "_content/Projekti1",
-      "RelativePath": "images/bc841911-2f82-4c42-b152-62a59e141051#[.{fingerprint}]?.jpg",
+      "RelativePath": "images/bc841911-2f82-4c42-b152-62a59e141051.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d80otgbacf",
-      "Integrity": "LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\bc841911-2f82-4c42-b152-62a59e141051.jpg"
     },
     {
-      "Identity": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.jpg",
+      "Identity": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.jpg",
       "SourceId": "Projekti1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
       "BasePath": "_content/Projekti1",
-      "RelativePath": "images/ec2e6a33-df57-47fc-af39-8eaac6a2b5e1#[.{fingerprint}]?.jpg",
+      "RelativePath": "images/ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d80otgbacf",
-      "Integrity": "LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.jpg"
     },
     {
-      "Identity": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\pizza.jpg",
+      "Identity": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\pizza.jpg",
       "SourceId": "Projekti1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\",
       "BasePath": "_content/Projekti1",
-      "RelativePath": "images/pizza#[.{fingerprint}]?.jpg",
+      "RelativePath": "images/pizza.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d80otgbacf",
-      "Integrity": "LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\pizza.jpg"
-    }
-  ],
-  "Endpoints": [
-    {
-      "Route": "images/257f2caa-7f10-4ff2-a698-f308ccef014a.d80otgbacf.jpg",
-      "AssetFile": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\257f2caa-7f10-4ff2-a698-f308ccef014a.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "76049"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Dec 2024 19:25:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d80otgbacf"
-        },
-        {
-          "Name": "label",
-          "Value": "images/257f2caa-7f10-4ff2-a698-f308ccef014a.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258="
-        }
-      ]
-    },
-    {
-      "Route": "images/257f2caa-7f10-4ff2-a698-f308ccef014a.jpg",
-      "AssetFile": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\257f2caa-7f10-4ff2-a698-f308ccef014a.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "76049"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Dec 2024 19:25:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258="
-        }
-      ]
-    },
-    {
-      "Route": "images/37d528c8-0b76-4cac-9252-f9cf8d428f3a.d80otgbacf.jpg",
-      "AssetFile": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\37d528c8-0b76-4cac-9252-f9cf8d428f3a.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "76049"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Dec 2024 19:25:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d80otgbacf"
-        },
-        {
-          "Name": "label",
-          "Value": "images/37d528c8-0b76-4cac-9252-f9cf8d428f3a.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258="
-        }
-      ]
-    },
-    {
-      "Route": "images/37d528c8-0b76-4cac-9252-f9cf8d428f3a.jpg",
-      "AssetFile": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\37d528c8-0b76-4cac-9252-f9cf8d428f3a.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "76049"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Dec 2024 19:25:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258="
-        }
-      ]
-    },
-    {
-      "Route": "images/bc841911-2f82-4c42-b152-62a59e141051.d80otgbacf.jpg",
-      "AssetFile": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\bc841911-2f82-4c42-b152-62a59e141051.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "76049"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Dec 2024 19:12:14 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d80otgbacf"
-        },
-        {
-          "Name": "label",
-          "Value": "images/bc841911-2f82-4c42-b152-62a59e141051.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258="
-        }
-      ]
-    },
-    {
-      "Route": "images/bc841911-2f82-4c42-b152-62a59e141051.jpg",
-      "AssetFile": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\bc841911-2f82-4c42-b152-62a59e141051.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "76049"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Dec 2024 19:12:14 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258="
-        }
-      ]
-    },
-    {
-      "Route": "images/ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.d80otgbacf.jpg",
-      "AssetFile": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "76049"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Dec 2024 13:53:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d80otgbacf"
-        },
-        {
-          "Name": "label",
-          "Value": "images/ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258="
-        }
-      ]
-    },
-    {
-      "Route": "images/ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.jpg",
-      "AssetFile": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\ec2e6a33-df57-47fc-af39-8eaac6a2b5e1.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "76049"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Dec 2024 13:53:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258="
-        }
-      ]
-    },
-    {
-      "Route": "images/pizza.d80otgbacf.jpg",
-      "AssetFile": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\pizza.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "76049"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 07 Dec 2024 19:47:41 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d80otgbacf"
-        },
-        {
-          "Name": "label",
-          "Value": "images/pizza.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258="
-        }
-      ]
-    },
-    {
-      "Route": "images/pizza.jpg",
-      "AssetFile": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\wwwroot\\images\\pizza.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "76049"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 07 Dec 2024 19:47:41 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LcTOgfPr4rkz52idIkElgbzt6DVUt39RbJm0VBE3258="
-        }
-      ]
     }
   ]
 }

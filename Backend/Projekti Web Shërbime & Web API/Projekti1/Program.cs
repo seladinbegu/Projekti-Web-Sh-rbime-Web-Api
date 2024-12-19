@@ -19,9 +19,9 @@ builder.Configuration["ConnectionStrings:UshqimiDb"] = Environment.GetEnvironmen
 
 
 
-var ushqimiConnectionString = Environment.GetEnvironmentVariable("DB_USHQIMI_CONNECTION_STRING_NEW");
-var dietaConnectionString = Environment.GetEnvironmentVariable("DB_DIETA_CONNECTION_STRING_NEW");
-var recetaConnectionString = Environment.GetEnvironmentVariable("DB_RECETA_CONNECTION_STRING_NEW");
+var ushqimiConnectionString = Environment.GetEnvironmentVariable("DB_USHQIMI_CONNECTION_STRING");
+var dietaConnectionString = Environment.GetEnvironmentVariable("DB_DIETA_CONNECTION_STRING");
+var recetaConnectionString = Environment.GetEnvironmentVariable("DB_RECETA_CONNECTION_STRING");
 var userConnectionString = Environment.GetEnvironmentVariable("DB_USER_CONNECTION_STRING");
 var dieta_ushqimiString = Environment.GetEnvironmentVariable("DB_USHQIMI_DIETA_CONNECTION_STRING");
 

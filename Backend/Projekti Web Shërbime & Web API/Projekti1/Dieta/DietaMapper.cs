@@ -22,7 +22,7 @@ public static class DietaMapper
             Emri = dietaDto.Emri,
             Pershkrimi = dietaDto.Pershkrimi,
             Lloji = dietaDto.Lloji,
-            DataKrijimit = dietaDto.DataKrijimit
+     DataKrijimit = DateTime.Now // Automatically set to cu
         };
     }
 }
