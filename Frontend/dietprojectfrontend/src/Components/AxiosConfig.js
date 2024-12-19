@@ -2,8 +2,12 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5177'
+  baseURL: 'http://localhost:5177/api'
 });
+
+
+
+ 
 
 const setupInterceptors = (handleLogout) => {
   api.interceptors.request.use(config => {

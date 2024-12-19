@@ -12,6 +12,10 @@ import { jwtDecode } from 'jwt-decode';  // Correct named import for jwt-decode
 import Profile from './Pages/Profile';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
+import Dieta from './Pages/Dieta';
+
+
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -136,6 +140,7 @@ function App() {
           <Route path="/profile" element={<Profile username={username} role={role} handleLogout={handleLogout} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/dieta" element={<Dieta />} />
         </Routes>
       </div>
       <Footer />
