@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import api from '../Components/Api';  // Make sure the case matches exactly (Api.js)
+import api from '../Components/api';  // Make sure the case matches exactly (Api.js)
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +19,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/Auth/register', formData); // Use api instance
+      const response = await api.post('http://localhost:5177/register', formData); // Use api instance
       if (response.status === 200) {
         alert('Regjistrimi u krye me sukses! Mirë se vini.');
         setError('');

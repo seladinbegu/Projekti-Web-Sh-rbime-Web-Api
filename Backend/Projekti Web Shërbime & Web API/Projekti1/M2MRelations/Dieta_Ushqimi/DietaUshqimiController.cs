@@ -60,7 +60,6 @@ public class DietaUshqimiController : ControllerBase
         if (dieta == null && ushqimi == null)
         {
             return BadRequest($"Dieta with ID {dietaushqimiDto.DietaId} and Ushqimi with ID {dietaushqimiDto.UshqimiId} not found.");
-
         }
 
         if (dieta == null)
@@ -73,6 +72,15 @@ public class DietaUshqimiController : ControllerBase
             return BadRequest($"Ushqimi with ID {dietaushqimiDto.UshqimiId} not found.");
         }
 
+        // Check for duplicates (same DietaId and UshqimiId)
+        var existingDietaUshqimi = await _context.DietaUshqimi
+            .FirstOrDefaultAsync(d => d.DietaId == dietaushqimiDto.DietaId && d.UshqimiId == dietaushqimiDto.UshqimiId);
+
+        if (existingDietaUshqimi != null)
+        {
+            return BadRequest($"A record with DietaId {dietaushqimiDto.DietaId} and UshqimiId {dietaushqimiDto.UshqimiId} already exists.");
+        }
+
         // Directly insert the new record
         var dietaushqimiModel = dietaushqimiDto.toDietaUshqimiFromCreateDto();
         _context.DietaUshqimi.Add(dietaushqimiModel);
@@ -82,6 +90,7 @@ public class DietaUshqimiController : ControllerBase
         // Return the created data with a 200 OK status
         return Ok();
     }
+
 
 
     // Delete a diet by ID

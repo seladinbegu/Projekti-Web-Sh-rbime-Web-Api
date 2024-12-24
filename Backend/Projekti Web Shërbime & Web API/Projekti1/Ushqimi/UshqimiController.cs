@@ -12,7 +12,7 @@ namespace Projekti1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    // [Authorize(Roles = "Admin")]
 
     public class UshqimiController : ControllerBase
     {

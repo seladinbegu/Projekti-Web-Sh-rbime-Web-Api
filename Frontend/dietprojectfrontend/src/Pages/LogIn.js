@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import api from '../Components/Api'; // Ensure the file name matches the actual case.
+import api from '../Components/api';  // Correct import for default export
 import Cookies from 'js-cookie';
 
 const Login = ({ onLogin }) => {

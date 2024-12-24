@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Projekti1.Migrations.DietaDb
 {
     /// <inheritdoc />
-    public partial class fixcolmntype : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,9 +30,9 @@ namespace Projekti1.Migrations.DietaDb
                     Vegan = table.Column<bool>(type: "bit", nullable: false),
                     kaGluten = table.Column<bool>(type: "bit", nullable: false),
                     kaBulmet = table.Column<bool>(type: "bit", nullable: false),
-                    Kategoria = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Origjina = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Kategoria = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Origjina = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DataKrijimit = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

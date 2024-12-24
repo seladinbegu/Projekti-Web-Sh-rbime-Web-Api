@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.OpenApi.Models;
+using Projekti1.Receta.DTOs;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Projekti1.Schema
@@ -21,6 +22,14 @@ namespace Projekti1.Schema
 
 
             if (context.Type == typeof(UshqimiCreateDto) || context.Type == typeof(UshqimiUpdateDto))
+            {
+                // Remove the DataKrijimit property from the schema
+                schema.Properties.Remove("DataKrijimit");
+            }
+
+
+
+            if (context.Type == typeof(RecetaCreateDto) || context.Type == typeof(RecetaUpdateDto))
             {
                 // Remove the DataKrijimit property from the schema
                 schema.Properties.Remove("DataKrijimit");

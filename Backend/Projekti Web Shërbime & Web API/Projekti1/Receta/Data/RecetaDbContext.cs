@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Projekti1.Models;
 
-namespace Projekti1.Data
+namespace Projekti1.Receta.Data
 {
     public class RecetaDbContext : DbContext
     {
@@ -9,6 +9,6 @@ namespace Projekti1.Data
 
 
 
-        // public DbSet<Ushqimi> Receta { get; set; }
+        public DbSet<Receta> Receta { get; set; }
     }
 }

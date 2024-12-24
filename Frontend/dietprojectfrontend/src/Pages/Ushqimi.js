@@ -1,142 +1,244 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../Components/api';
 
 
 const Ushqimi = () => {
   const [ushqimet, setUshqimet] = useState([]);
   const [newUshqimi, setNewUshqimi] = useState({
     emri: '',
-    kalori: '',
-    proteina: '',
-    karbohidrate: '',
-    yndyrna: '',
-    fibrat: '',
-    vitaminC: '',
-    vitaminA: '',
-    kalcium: '',
-    hekur: '',
+    kalori: 0,
+    proteina: 0,
+    karbohidrate: 0,
+    yndyrna: 0,
+    fibrat: 0,
+    vitaminC: 0,
+    vitaminA: 0,
+    kalcium: 0,
+    hekur: 0,
     vegan: false,
     kaGluten: false,
     kaBulmet: false,
     kategoria: '',
     origjina: '',
     imagePath: '',
+    dataKrijimit: '',
+    receta: [],  // Holds selected Ushqimi IDs
   });
+  const [receta, setReceta] = useState([]);
+  const [recetaUshqimi, setRecetaUshqimi] = useState([]); // Holds RecetaUshqimi data
   const [isEditing, setIsEditing] = useState(false);
+  const [selectedRecetat, setSelectedRecetat] = useState([]); // Added selectedFoods state
 
-  
-  const apiUrl = 'http://localhost:5177/api/Ushqimi'; // Replace with your actual API URL
-  
   useEffect(() => {
+    fetchRecetat();
     fetchUshqimet();
+    fetchRecetaUshqimi(); // Fetch RecetaUshqimi data
   }, []);
-  
-  // Fetch all Ushqimet
+
   const fetchUshqimet = async () => {
     try {
-      const response = await axios.get(apiUrl, {
-        withCredentials: true, // Ensure cookies are sent with the request
-      });
-      console.log("Fetched data:", response.data);  // Check if it's an array
-      setUshqimet(Array.isArray(response.data) ? response.data : []); // Ensure it's an array
+      const response = await api.get('/Ushqimi');
+      setUshqimet(response.data);
     } catch (error) {
-      console.error("Error fetching ushqimet:", error);
+      console.error('Error fetching recetat:', error);
     }
   };
-  
-  const handleEdit = (ushqimi) => {
-    setNewUshqimi({ ...ushqimi });  // Set the form fields to the selected 'ushqimi'
-    setIsEditing(true); // Set editing mode to true
+
+  const fetchRecetaUshqimi = async () => {
+    try {
+      const response = await api.get('/RecetaUshqimi');
+      setRecetaUshqimi(response.data);
+      console.log("RecetaUshqimi data:", response.data); // Check the fetched RecetaUshqimi data
+    } catch (error) {
+      console.error('Error fetching recetaUshqimi:', error);
+    }
   };
-  
+
+  const fetchRecetat = async () => {
+    try {
+      const response = await api.get('/Receta');
+      setReceta(response.data);
+    } catch (error) {
+      console.error('Error fetching recetat:', error);
+    }
+  };
+
+  const handleEdit = (ushqimi) => {
+    const recetaArray = Array.isArray(ushqimi.receta) ? ushqimi.receta : [];
+    setNewUshqimi({
+      ...ushqimi,
+      receta: recetaArray.map((receta) => receta.id),
+      
+    });
+    setIsEditing(true);
+
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    // Ensure that all required fields are filled before proceeding
-    if (!newUshqimi.emri || !newUshqimi.kategoria) {
-      console.error('Please fill out the required fields.');
-      return; // Prevent submission if required fields are missing
-    }
-  
     try {
-      // Determine the HTTP method based on whether you're editing or creating
-      const method = isEditing ? 'PUT' : 'POST';
-      const requestData = { ...newUshqimi }; // Copy state data for submission
+      const method = isEditing ? 'put' : 'post';
+      const url = isEditing ? `/Ushqimi/${newUshqimi.id}` : '/Ushqimi';
   
-      // Ensure `id` is included for editing
-      if (isEditing) {
-        requestData.id = newUshqimi.id;
-      }
-  
-      // Set the correct API URL for creating or updating
-      const url = isEditing ? `${apiUrl}/${newUshqimi.id}` : apiUrl;
-  
-      // Perform the API request (POST for creating, PUT for editing)
-      const response = await axios({
-        method: method,
-        url: url,
-        data: requestData,
-        withCredentials: true, // Ensure cookies are sent with the request
+      // Save or update the Ushqimi
+      const ushqimiResponse = await api({
+        method,
+        url,
+        data: {
+          emri: newUshqimi.emri,
+          kalori: newUshqimi.kalori,
+          proteina: newUshqimi.proteina,
+          karbohidrate: newUshqimi.karbohidrate,
+          yndyrna: newUshqimi.yndyrna,
+          fibrat: newUshqimi.fibrat,
+          vitaminC: newUshqimi.vitaminC,
+          vitaminA: newUshqimi.vitaminA,
+          kalcium: newUshqimi.kalcium,
+          hekur: newUshqimi.hekur,
+          vegan: newUshqimi.vegan,
+          kaGluten: newUshqimi.kaGluten,
+          kaBulmet: newUshqimi.kaBulmet,
+          kategoria: newUshqimi.kategoria,
+          origjina: newUshqimi.origjina,
+          imagePath: newUshqimi.imagePath,
+        },
       });
   
-      // If the request was successful (status 200 or 201 for creation)
-      if (response.status === 200 || response.status === 201) {
-        // Fetch updated data
-        fetchUshqimet();
+      const ushqimiId = ushqimiResponse.data.id || newUshqimi.id;
   
-        // Reset form state to clear inputs
-        setNewUshqimi({
-          emri: '',
-          kalori: '',
-          proteina: '',
-          karbohidratet: '',
-          yndyrna: '',
-          fibrat: '',
-          vitaminC: '',
-          vitaminA: '',
-          kalcium: '',
-          hekur: '',
-          vegan: false,
-          kaGluten: false,
-          kaBulmet: false,
-          kategoria: '',
-          origjina: '',
-          imagePath: '',
-        });
+      if (isEditing) {
+        // Get the current RecetaUshqimi associations for the current Ushqimi
+        const currentRecetaUshqimi = recetaUshqimi.filter(
+          (item) => item.ushqimiId === ushqimiId
+        );
   
-        // Reset the editing state if in edit mode
-        setIsEditing(false);
+        // Get the recetaIds that are currently associated with the Ushqimi
+        const currentRecetaIds = currentRecetaUshqimi.map((item) => item.recetaId);
+  
+        // Step 1: Remove associations for unselected Receta (this is where we fix the issue)
+        for (let recetaId of currentRecetaIds) {
+          if (!selectedRecetat.includes(recetaId)) {
+            try {
+              await api.delete(`/RecetaUshqimi/${recetaId}/${ushqimiId}`);
+            } catch (error) {
+              console.error(`Failed to delete RecetaUshqimi with recetaId=${recetaId} and ushqimiId=${ushqimiId}:`, error);
+            }
+          }
+        }
+  
+        // Step 2: Add associations for newly selected Receta (if not already associated)
+        for (let recetaId of selectedRecetat) {
+          if (!currentRecetaIds.includes(recetaId)) {
+            try {
+              await api.post('/RecetaUshqimi', { ushqimiId, recetaId });
+            } catch (error) {
+              console.error(`Failed to add RecetaUshqimi with recetaId=${recetaId} and ushqimiId=${ushqimiId}:`, error);
+            }
+          }
+        }
+      } else {
+        // For new Ushqimi, add all selected RecetaUshqimi associations
+        for (let recetaId of selectedRecetat) {
+          try {
+            await api.post('/RecetaUshqimi', {
+              ushqimiId: ushqimiResponse.data.id,
+              recetaId,
+            });
+          } catch (error) {
+            console.error(`Failed to add RecetaUshqimi with recetaId=${recetaId}:`, error);
+          }
+        }
       }
+  
+      // Refresh data and reset the form
+      await fetchRecetat();
+      await fetchRecetaUshqimi();
+      setNewUshqimi({
+        emri: '',
+        kalori: 0,
+        proteina: 0,
+        karbohidrate: 0,
+        yndyrna: 0,
+        fibrat: 0,
+        vitaminC: 0,
+        vitaminA: 0,
+        kalcium: 0,
+        hekur: 0,
+        vegan: false,
+        kaGluten: false,
+        kaBulmet: false,
+        kategoria: '',
+        origjina: '',
+        imagePath: '',
+        receta: [],
+      });
+      setSelectedRecetat([]);
+      setIsEditing(false);
+      fetchUshqimet();
+
     } catch (error) {
-      console.error('Error creating/updating Ushqimi:', error);
-      // You can also display an error message to the user here
+      console.error('Error submitting receta:', error);
     }
   };
   
-  // Handle delete
+  
+  
+
   const deleteUshqimi = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this Ushqimi?");
-    if (confirmDelete) {
+    if (window.confirm('Are you sure you want to delete this ushqimi?')) {
       try {
-        await axios.delete(`${apiUrl}/${id}`, {
-          withCredentials: true, // Ensure cookies are sent with the request
-        });
-        fetchUshqimet(); // Refresh the list
+        await api.delete(`/Ushqimi/${id}`);
+        fetchUshqimet();
       } catch (error) {
-        console.error("Error deleting ushqimi:", error);
+        console.error('Error deleting ushqimet:', error);
       }
     }
   };
+
+  // Function to get food names for a given recipe ID
+  const getRecetaNames = (ushqimiId) => {
+    if (!receta || !recetaUshqimi) {
+      return 'Loading...'; // Return a loading message while data is being fetched
+    }
   
- 
+    // Filter RecetaUshqimi to get associations for the given UshqimiId
+    const associatedReceta = recetaUshqimi
+      .filter((item) => item.ushqimiId === ushqimiId) // Check for matching UshqimiId
+      .map((item) => {
+        const recetaFound = receta.find((receta) => receta.id === item.recetaId); // Find the corresponding Receta
+        return recetaFound ? recetaFound.emri : 'Unknown Receta'; // If found, return name, else 'Unknown Receta'
+      });
+  
+    // Return all associated Receta names or a message if none are found
+    return associatedReceta.length > 0 ? associatedReceta.join(', ') : 'No associated receta';
+  };
+  
+
+  const handleCheckboxChange = (e) => {
+    const recetaId = parseInt(e.target.value, 10); // Ensure the value is treated as a number
+  
+    if (e.target.checked) {
+      // Add the recetaId to the selectedRecetat array if it is checked
+      setSelectedRecetat((prevSelected) => [...prevSelected, recetaId]);
+    } else {
+      // Remove the recetaId from the selectedRecetat array if it is unchecked
+      setSelectedRecetat((prevSelected) =>
+        prevSelected.filter((id) => id !== recetaId)
+      );
+    }
+  };
+  
+  
   
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-4xl font-bold text-center mb-8">Menaxhmenti i Ushqimeve</h1>
+<h1 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-700 via-pink-500 to-red-500">
+  Menaxhmenti i Ushqimeve
+</h1>
   
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Ushqimet Ekzistuse</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {ushqimet.map((ushqimi) => (
             <div key={ushqimi.id} className="bg-white shadow-md rounded-lg overflow-hidden">
@@ -171,6 +273,19 @@ const Ushqimi = () => {
                   <p><strong>Vitamin A:</strong> {ushqimi.vitaminA} IU</p>
                   <p><strong>Kalcium:</strong> {ushqimi.kalcium} mg</p>
                   <p><strong>Hekur:</strong> {ushqimi.hekur} mg</p>
+                  <p><strong>Data e Krijimit:</strong> {
+    new Date(ushqimi.dataKrijimit).toLocaleString('sq-KS', {
+        weekday: 'long', // Full day name
+        year: 'numeric', // Full year
+        month: 'long', // Full month name
+        day: 'numeric', // Day of the month
+        hour: '2-digit', // Two-digit hour
+        minute: '2-digit', // Two-digit minute
+        second: '2-digit', // Two-digit second
+        hour12: false, // 24-hour format
+    })
+}</p>
+
                 </div>
   
                 {/* Vegan, Gluten, Dairy info */}
@@ -180,6 +295,13 @@ const Ushqimi = () => {
                   <p className={`${ushqimi.kaGluten ? "text-green-500" : "text-red-500"}`}><strong>Ka Gluten:</strong> {ushqimi.kaGluten ? "✅" : "❌"}</p>
                   <p className={`${ushqimi.kaBulmet ? "text-green-500" : "text-red-500"}`}><strong>Ka Bulmet:</strong> {ushqimi.kaBulmet ? "✅" : "❌"}</p>
                 </div>
+
+
+                <p className="block text-sm font-medium text-blue-600">
+
+Recetat: 
+<span className="font-bold text-blue-600">{getRecetaNames(ushqimi.id)}</span>
+</p>
               </div>
   
               {/* Edit and Delete Buttons */}
@@ -388,6 +510,27 @@ const Ushqimi = () => {
               onChange={(e) => setNewUshqimi({ ...newUshqimi, imagePath: e.target.value })}
             />
           </div>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Recetat</label>
+         <div>
+  {receta.map((receta) => (
+    <div key={receta.id} className="flex items-center mb-2">
+      <input
+        type="checkbox"
+        id={`receta-${receta.id}`} // Make sure each checkbox has a unique ID
+        value={receta.id}
+        className="mr-2"
+        onChange={handleCheckboxChange} // Handle checkbox state change
+        checked={selectedRecetat.includes(receta.id)} // Check if the recetaId is in the selectedRecetat array
+      />
+      <label htmlFor={`receta-${receta.id}`} className="text-gray-700">
+        {receta.emri}
+      </label>
+    </div>
+  ))}
+</div>
+
         </div>
   
         {/* Update or Create Button */}

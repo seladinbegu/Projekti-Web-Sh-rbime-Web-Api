@@ -45,7 +45,7 @@ namespace Projekti1.Migrations.DietaDb
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("Pershkrimi")
-                        .HasColumnType("bigint");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

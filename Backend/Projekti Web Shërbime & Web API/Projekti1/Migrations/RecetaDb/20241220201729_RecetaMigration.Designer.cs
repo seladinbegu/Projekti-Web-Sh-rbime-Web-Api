@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Projekti1.Data;
+using Projekti1.Receta.Data;
 
 #nullable disable
 
-namespace Projekti1.Migrations.DietaDb
+namespace Projekti1.Migrations.RecetaDb
 {
-    [DbContext(typeof(DietaDbContext))]
-    [Migration("20241218235455_fixcolmntype")]
-    partial class fixcolmntype
+    [DbContext(typeof(RecetaDbContext))]
+    [Migration("20241220201729_RecetaMigration")]
+    partial class RecetaMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,7 +98,6 @@ namespace Projekti1.Migrations.DietaDb
                         .HasColumnType("float");
 
                     b.Property<string>("ImagePath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Kalcium")
@@ -111,11 +110,9 @@ namespace Projekti1.Migrations.DietaDb
                         .HasColumnType("float");
 
                     b.Property<string>("Kategoria")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Origjina")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Proteina")
@@ -144,6 +141,51 @@ namespace Projekti1.Migrations.DietaDb
                     b.ToTable("Ushqimi");
                 });
 
+            modelBuilder.Entity("Projekti1.Receta.Receta", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataKrijimit")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Emri")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Udhezimet")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Receta");
+                });
+
+            modelBuilder.Entity("RecetaUshqimi", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("RecetaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UshqimiId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RecetaId");
+
+                    b.HasIndex("UshqimiId");
+
+                    b.ToTable("RecetaUshqimi");
+                });
+
             modelBuilder.Entity("Projekti1.M2MRelations.DietaUshqimi", b =>
                 {
                     b.HasOne("Projekti1.Models.Dieta", "Dieta")
@@ -163,6 +205,25 @@ namespace Projekti1.Migrations.DietaDb
                     b.Navigation("Ushqimi");
                 });
 
+            modelBuilder.Entity("RecetaUshqimi", b =>
+                {
+                    b.HasOne("Projekti1.Receta.Receta", "Receta")
+                        .WithMany("RecetaUshqimi")
+                        .HasForeignKey("RecetaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Projekti1.Models.Ushqimi", "Ushqimi")
+                        .WithMany("RecetaUshqimi")
+                        .HasForeignKey("UshqimiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Receta");
+
+                    b.Navigation("Ushqimi");
+                });
+
             modelBuilder.Entity("Projekti1.Models.Dieta", b =>
                 {
                     b.Navigation("DietaUshqimi");
@@ -171,6 +232,13 @@ namespace Projekti1.Migrations.DietaDb
             modelBuilder.Entity("Projekti1.Models.Ushqimi", b =>
                 {
                     b.Navigation("DietaUshqimi");
+
+                    b.Navigation("RecetaUshqimi");
+                });
+
+            modelBuilder.Entity("Projekti1.Receta.Receta", b =>
+                {
+                    b.Navigation("RecetaUshqimi");
                 });
 #pragma warning restore 612, 618
         }

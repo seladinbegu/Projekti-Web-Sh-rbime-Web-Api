@@ -9,11 +9,11 @@ namespace Projekti1.Models
         public int Id { get; set; }
         public string Emri { get; set; } = string.Empty;
         public string Lloji { get; set; } = string.Empty;
-        public string Pershkrimi { get; set; }
+        public string Pershkrimi { get; set; } = string.Empty;
         public DateTime DataKrijimit { get; set; } = DateTime.Now;
 
 
-        public ICollection<DietaUshqimi> DietaUshqimi { get; set; }
+        public ICollection<DietaUshqimi>? DietaUshqimi { get; set; }
 
     }
 }

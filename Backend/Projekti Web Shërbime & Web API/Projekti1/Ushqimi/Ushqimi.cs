@@ -21,9 +21,9 @@ namespace Projekti1.Models
         public bool Vegan { get; set; }
         public bool kaGluten { get; set; }
         public bool kaBulmet { get; set; }
-        public string Kategoria { get; set; }
-        public string Origjina { get; set; }
-        public string ImagePath { get; set; }
+        public string? Kategoria { get; set; }
+        public string? Origjina { get; set; }
+        public string? ImagePath { get; set; }
         public DateTime DataKrijimit { get; set; } = DateTime.Now;
 
 
@@ -31,7 +31,9 @@ namespace Projekti1.Models
 
 
 
-        public ICollection<DietaUshqimi> DietaUshqimi { get; set; }
+        public ICollection<DietaUshqimi>? DietaUshqimi { get; set; }
+        public ICollection<RecetaUshqimi>? RecetaUshqimi { get; set; }
+
 
     }
 }

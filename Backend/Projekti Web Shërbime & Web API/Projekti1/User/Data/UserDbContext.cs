@@ -13,6 +13,10 @@ namespace Projekti1.User.Data
         public UserDbContext(DbContextOptions<UserDbContext> options) : base(options) { }
 
 
+        public DbSet<User> User { get; set; }
+
+
+
         public DbSet<RefreshToken> RefreshToken { get; set; }
 
 

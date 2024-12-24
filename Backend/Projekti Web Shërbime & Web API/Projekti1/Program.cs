@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Projekti1.Data;
 using Projekti1.M2MRelations.Data;
+using Projekti1.Receta.Data;
 using Projekti1.User;
 using Projekti1.User.Data;
 
@@ -19,11 +20,15 @@ builder.Configuration["ConnectionStrings:UshqimiDb"] = Environment.GetEnvironmen
 
 
 
-var ushqimiConnectionString = Environment.GetEnvironmentVariable("DB_USHQIMI_CONNECTION_STRING");
-var dietaConnectionString = Environment.GetEnvironmentVariable("DB_DIETA_CONNECTION_STRING");
-var recetaConnectionString = Environment.GetEnvironmentVariable("DB_RECETA_CONNECTION_STRING");
+var ushqimiConnectionString = Environment.GetEnvironmentVariable("DB_USHQIMI_CONNECTION_STRING_NEW");
+var dietaConnectionString = Environment.GetEnvironmentVariable("DB_DIETA_CONNECTION_STRING_NEW");
+var recetaConnectionString = Environment.GetEnvironmentVariable("DB_RECETA_CONNECTION_STRING_NEW");
 var userConnectionString = Environment.GetEnvironmentVariable("DB_USER_CONNECTION_STRING");
 var dieta_ushqimiString = Environment.GetEnvironmentVariable("DB_USHQIMI_DIETA_CONNECTION_STRING");
+var receta_ushqimiString = Environment.GetEnvironmentVariable("DB_USHQIMI_RECETA_CONNECTION_STRING");
+var receta_userString = Environment.GetEnvironmentVariable("DB_RECETA_USER_CONNECTION_STRING");
+
+
 
 
 Console.WriteLine("Ushqimi Connection String: " + ushqimiConnectionString);
@@ -31,6 +36,10 @@ Console.WriteLine("Dieta Connection String: " + dietaConnectionString);
 Console.WriteLine("Receta Connection String: " + recetaConnectionString);
 Console.WriteLine("User Connection String: " + userConnectionString);
 Console.WriteLine("Dieta-Ushqimi Connection String: " + dieta_ushqimiString);
+Console.WriteLine("Receta-Ushqimi Connection String: " + receta_ushqimiString);
+Console.WriteLine("Receta-User Connection String: " + receta_userString);
+
+
 var wwwRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
 if (!Directory.Exists(wwwRootPath))
 {
@@ -48,6 +57,10 @@ builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(userConnectionString));
 builder.Services.AddDbContext<Dieta_UshqimiDbContext>(options =>
     options.UseSqlServer(dieta_ushqimiString));
+builder.Services.AddDbContext<Receta_UshqimiDbContext>(options =>
+options.UseSqlServer(receta_ushqimiString));
+builder.Services.AddDbContext<Receta_UserDbContext>(options =>
+options.UseSqlServer(receta_userString));
 
 builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();

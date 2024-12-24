@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj": {}
+    "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj": {
+    "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj",
+        "projectUniqueName": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj",
         "projectName": "Projekti1",
-        "projectPath": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\obj\\",
+        "projectPath": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\Projekti1.csproj",
+        "packagesPath": "C:\\Users\\begus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\begus\\OneDrive\\Desktop\\Projekti-Web-Sh-rbime-Web-Api\\Backend\\Projekti Web Shërbime & Web API\\Projekti1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\begus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -67,10 +71,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.10, )"
-            },
-            "Microsoft.Owin.Security.Jwt": {
-              "target": "Package",
-              "version": "[4.2.2, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -100,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

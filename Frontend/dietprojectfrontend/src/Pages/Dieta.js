@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { api } from '../Components/AxiosConfig';
+import api from '../Components/api';
 
 const Dieta = () => {
   const [dietat, setDietat] = useState([]);
@@ -63,7 +63,9 @@ const Dieta = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-4xl font-bold text-center mb-8">Menaxhimi i Dietave</h1>
+<h1 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-700 via-pink-500 to-red-500">
+  Menaxhmenti i Dietave
+</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {dietat.map((dieta) => (

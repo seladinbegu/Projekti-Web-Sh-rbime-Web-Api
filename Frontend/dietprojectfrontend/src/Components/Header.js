@@ -1,93 +1,217 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../Images/PRTENIUMLOGO.png";
-import { FaUserCircle } from "react-icons/fa"; // Import Font Awesome icon
+import { FaUserCircle, FaBars, FaTimes, FaArrowLeft } from "react-icons/fa"; // Added FaArrowLeft
 
 const Header = ({ isLoggedIn, handleLogout, role, username }) => {
+  const [menuOpen, setMenuOpen] = useState(false); // For toggling menu on mobile
   const navigate = useNavigate();
 
   // Handle login click - redirects to login page
-  const handleLoginClick = () => navigate("/login");
+  const handleLoginClick = () => {
+    setMenuOpen(false);  // Close the mobile menu
+    navigate("/login");  // Navigate to the login page
+  };
+
+  // Toggle menu on small screens
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  // Close the menu when the back arrow is clicked
+  const handleBackClick = () => {
+    setMenuOpen(false); // Close the menu
+  };
 
   // Render the header UI
   return (
-    <header
-      className="flex justify-between items-center p-4 text-white"
-      style={{
-        background: "linear-gradient(180deg, rgb(76, 20, 165), rgba(210, 82, 112, 255))",
-      }}
-    >
-      {/* Logo */}
-      <div
-        className="relative w-36 h-auto overflow-hidden transition-all duration-300 transform hover:scale-105"
-        onClick={() => navigate("/")}
-        style={{ borderRadius: "8px" }}
-      >
-        <img
-          src={logo}
-          alt="Logo"
-          className="w-full h-auto"
-          style={{ borderRadius: "8px", border: "none" }}
-        />
-      </div>
-
-      {/* Navigation */}
-      <div className="flex gap-4">
-        <button
-          className="px-6 py-3 bg-gradient-to-b from-purple-600 to-pink-500 text-white font-semibold rounded-md shadow-lg transform transition-all duration-300 hover:scale-110"
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-purple-700 via-pink-500 to-red-500 text-white shadow-md">
+      <div className="flex items-center justify-between px-4 py-3 lg:px-8">
+        {/* Logo */}
+        <div
+          className="relative w-36 h-auto overflow-hidden cursor-pointer rounded-lg border-4 border-transparent hover:border-purple-500 transition-all duration-300 ease-in-out"
           onClick={() => navigate("/")}
         >
-          Home
-        </button>
-        <button
-          className="px-6 py-3 bg-gradient-to-b from-purple-600 to-pink-500 text-white font-semibold rounded-md shadow-lg transform transition-all duration-300 hover:scale-110"
-          onClick={() => navigate("/ushqimi")}
-        >
-          Ushqimet
-        </button>
-        <button
-          className="px-6 py-3 bg-gradient-to-b from-purple-600 to-pink-500 text-white font-semibold rounded-md shadow-lg transform transition-all duration-300 hover:scale-110"
-          onClick={() => navigate("/dieta")}
-        >
-          Dieta
-        </button>
-        <button
-          className="px-6 py-3 bg-gradient-to-b from-purple-600 to-pink-500 text-white font-semibold rounded-md shadow-lg transform transition-all duration-300 hover:scale-110"
-          onClick={() => navigate("/about")}
-        >
-          About
-        </button>
-        <button
-          className="px-6 py-3 bg-gradient-to-b from-purple-600 to-pink-500 text-white font-semibold rounded-md shadow-lg transform transition-all duration-300 hover:scale-110"
-          onClick={() => navigate("/contact")}
-        >
-          Contact
-        </button>
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-full h-auto transform transition-transform duration-300 hover:scale-110 hover:shadow-lg"
+            style={{
+              borderRadius: "8px", // Keeping the logo with rounded corners
+            }}
+          />
+        </div>
 
-        {/* User Section */}
-        {isLoggedIn ? (
-          <div className="flex items-center gap-2 cursor-pointer">
-            <FaUserCircle
-              className="w-10 h-10 text-white cursor-pointer hover:text-gray-300 transition duration-300"
-              onClick={() => navigate("/profile")}
-            />
-            <span>{role === "Admin" ? `${username} (Admin)` : username}</span>
+        {/* Hamburger Menu for Mobile */}
+        <div className="lg:hidden">
+          <button onClick={toggleMenu} className="text-2xl">
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
 
-            <button
-              className="px-4 py-2 bg-gradient-to-b from-red-600 to-red-500 text-white font-semibold rounded-md shadow-lg transform transition-all duration-300 hover:scale-110"
-              onClick={handleLogout} // Use the passed handleLogout function
-            >
-              Log Out
+        {/* Mobile Back Arrow */}
+        {menuOpen && (
+          <div className="absolute top-4 left-4 lg:hidden z-50">
+            <button onClick={handleBackClick} className="text-xl text-white">
+              <FaArrowLeft />
             </button>
           </div>
-        ) : (
-          <button
-            className="px-6 py-3 bg-gradient-to-b from-purple-600 to-pink-500 text-white font-semibold rounded-md shadow-lg transform transition-all duration-300 hover:scale-110"
-            onClick={handleLoginClick}
-          >
-            Log In
-          </button>
         )}
+
+        {/* Desktop Navigation */}
+        <nav
+          className={`fixed top-0 left-0 w-full h-screen bg-purple-800 bg-opacity-95 text-center transform ${
+            menuOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300 lg:static lg:w-auto lg:h-auto lg:bg-transparent lg:transform-none lg:flex lg:items-center lg:gap-6`}
+        >
+          <ul className="flex flex-col items-center gap-6 mt-20 lg:mt-0 lg:flex-row">
+            <li>
+              <button
+                className="text-lg font-semibold hover:text-gray-300 transition"
+                onClick={() => {
+                  navigate("/");
+                  setMenuOpen(false);
+                }}
+              >
+                Kreu
+              </button>
+            </li>
+            <li>
+              <button
+                className="text-lg font-semibold hover:text-gray-300 transition"
+                onClick={() => {
+                  navigate("/ushqimiforuser");
+                  setMenuOpen(false);
+                }}
+              >
+                Ushqimet
+              </button>
+            </li>
+            <li>
+              <button
+                className="text-lg font-semibold hover:text-gray-300 transition"
+                onClick={() => {
+                  navigate("/dietaforuser");
+                  setMenuOpen(false);
+                }}
+              >
+                Dietat
+              </button>
+            </li>
+            <li>
+              <button
+                className="text-lg font-semibold hover:text-gray-300 transition"
+                onClick={() => {
+                  navigate("/recetaforuser");
+                  setMenuOpen(false);
+                }}
+              >
+                Recetat
+              </button>
+            </li>
+            <li>
+              <button
+                className="text-lg font-semibold hover:text-gray-300 transition"
+                onClick={() => {
+                  navigate("/about");
+                  setMenuOpen(false);
+                }}
+              >
+                Rreth nesh
+              </button>
+            </li>
+            <li>
+              <button
+                className="text-lg font-semibold hover:text-gray-300 transition"
+                onClick={() => {
+                  navigate("/contact");
+                  setMenuOpen(false);
+                }}
+              >
+                Kontaktimi
+              </button>
+            </li>
+          </ul>
+
+          {/* Admin Section */}
+          {role === "Admin" && (
+            <div className="mt-20 lg:mt-0 lg:flex lg:items-center lg:gap-4">
+              <div className="relative group">
+                <button className="text-lg font-semibold hover:text-gray-300 transition">
+                  Admin Dashboard
+                </button>
+                {/* Dropdown menu */}
+                <ul className="absolute left-0 mt-2 space-y-2 bg-gradient-to-r from-purple-700 via-pink-500 to-red-500 text-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-300 ease-in-out">
+                  <li>
+                    <button
+                      className="block px-4 py-2 text-lg hover:text-gray-400 transition"
+                      onClick={() => {
+                        navigate("/ushqimi");
+                      }}
+                    >
+                      Menaxhmenti i Ushqimeve
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="block px-4 py-2 text-lg hover:text-gray-400 transition"
+                      onClick={() => {
+                        navigate("/dieta");
+                      }}
+                    >
+                      Menaxhmenti i Dietave
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="block px-4 py-2 text-lg hover:text-gray-400 transition"
+                      onClick={() => {
+                        navigate("/receta");
+                      }}
+                    >
+                      Menaxhmenti i Recetave
+                    </button>
+                  </li>
+                 
+                </ul>
+              </div>
+            </div>
+          )}
+
+          {/* User Section */}
+          <div className="mt-full lg:mt-0 lg:flex lg:items-center lg:gap-4">
+          {isLoggedIn ? (
+              <div className="flex flex-col items-center lg:flex-row lg:items-center lg:gap-2">
+                <FaUserCircle
+                  className="w-10 h-10 text-white hover:text-gray-300 transition cursor-pointer"
+                  onClick={() => {
+                    navigate("/profile");
+                    setMenuOpen(false);
+                  }}
+                />
+                <span>{role === "Admin" ? `${username} (Admin)` : username}</span>
+
+                {/* Log Out Button with hover effect */}
+                <button
+                  className="relative mt-4 px-4 py-2 bg-red-600 text-white font-semibold rounded-md shadow-lg transition-all duration-300 ease-in-out lg:mt-0 overflow-hidden group"
+                  onClick={handleLogout}
+                >
+                  <span className="relative z-10">Log Out</span>
+                  <span className="absolute inset-0 bg-red-500 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-20"></span>
+                  <span className="absolute inset-0 bg-red-500 transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out"></span>
+                </button>
+              </div>
+            ) : (
+              // Log In Button with hover effect
+              <button
+                className="relative mt-4 px-6 py-3 bg-green-600 text-white font-semibold rounded-md shadow-lg transition-all duration-300 ease-in-out lg:mt-0 overflow-hidden group"
+                onClick={handleLoginClick}
+              >
+                <span className="relative z-10">Log In</span>
+                <span className="absolute inset-0 bg-green-500 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-20"></span>
+                <span className="absolute inset-0 bg-green-500 transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out"></span>
+              </button>
+            )}
+          </div>
+        </nav>
       </div>
     </header>
   );

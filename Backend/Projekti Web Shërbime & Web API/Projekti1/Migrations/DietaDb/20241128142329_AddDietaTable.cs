@@ -19,7 +19,7 @@ namespace Projekti1.Migrations.DietaDb
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Emri = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Lloji = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Pershkrimi = table.Column<long>(type: "bigint", nullable: false),
+                    Pershkrimi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataKrijimit = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

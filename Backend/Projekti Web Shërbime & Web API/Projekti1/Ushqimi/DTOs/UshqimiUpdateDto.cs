@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 public class UshqimiUpdateDto
 {
     public int Id { get; set; }
-    public string Emri { get; set; }
+    public string? Emri { get; set; }
     public double Kalori { get; set; }
     public double Proteina { get; set; }
     public double Karbohidrate { get; set; }
@@ -20,13 +20,13 @@ public class UshqimiUpdateDto
     public bool Vegan { get; set; }
     public bool kaGluten { get; set; }
     public bool kaBulmet { get; set; }
-    public string Kategoria { get; set; }
-    public string Origjina { get; set; }
+    public string? Kategoria { get; set; }
+    public string? Origjina { get; set; }
     [JsonIgnore]
 
     public DateTime DataKrijimit { get; set; } = DateTime.Now;
 
-    public string ImagePath { get; set; }
+    public string? ImagePath { get; set; }
 
 
 }

@@ -42,7 +42,7 @@ namespace Projekti1.Migrations.DietaDb
 
                     b.HasIndex("UshqimiId");
 
-                    b.ToTable("DietaUshqimi", (string)null);
+                    b.ToTable("DietaUshqimi");
                 });
 
             modelBuilder.Entity("Projekti1.Models.Dieta", b =>
@@ -70,7 +70,7 @@ namespace Projekti1.Migrations.DietaDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("Dieta", (string)null);
+                    b.ToTable("Dieta");
                 });
 
             modelBuilder.Entity("Projekti1.Models.Ushqimi", b =>
@@ -95,7 +95,6 @@ namespace Projekti1.Migrations.DietaDb
                         .HasColumnType("float");
 
                     b.Property<string>("ImagePath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Kalcium")
@@ -108,11 +107,9 @@ namespace Projekti1.Migrations.DietaDb
                         .HasColumnType("float");
 
                     b.Property<string>("Kategoria")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Origjina")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Proteina")
@@ -138,7 +135,7 @@ namespace Projekti1.Migrations.DietaDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ushqimi", (string)null);
+                    b.ToTable("Ushqimi");
                 });
 
             modelBuilder.Entity("Projekti1.M2MRelations.DietaUshqimi", b =>

@@ -211,7 +211,6 @@ namespace Projekti1.User
 
 
         [HttpGet("users")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = _userManager.Users.ToList();
@@ -233,7 +232,6 @@ namespace Projekti1.User
 
 
         [HttpGet("users/by-username")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetUserByUsername([FromQuery] string username)
         {
             if (string.IsNullOrEmpty(username))
@@ -281,6 +279,90 @@ namespace Projekti1.User
 
             return BadRequest(new { Message = "Failed to delete user.", Errors = result.Errors });
         }
+
+
+
+
+
+        [HttpPut("users/update-username")]
+        [Authorize]
+        public async Task<IActionResult> UpdateUsername([FromBody] UpdateUsernameModel model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                return NotFound(new { Message = "User not found." });
+
+            var existingUser = await _userManager.FindByNameAsync(model.NewUsername);
+            if (existingUser != null)
+                return BadRequest(new { Message = "Username already taken." });
+
+            user.UserName = model.NewUsername;
+            var result = await _userManager.UpdateAsync(user);
+
+            if (result.Succeeded)
+            {
+                return Ok(new { Message = "Username updated successfully." });
+            }
+
+            return BadRequest(new { Message = "Failed to update username.", Errors = result.Errors });
+        }
+
+
+
+
+        [HttpPut("users/update-password")]
+        [Authorize] // Ensure that only authenticated users can update their password
+        public async Task<IActionResult> UpdatePassword([FromBody] UpdatePasswordModel model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            // Get the current user from the claims
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                return NotFound(new { Message = "User not found." });
+
+            // Check if the current password is correct
+            var passwordCheck = await _userManager.CheckPasswordAsync(user, model.CurrentPassword);
+            if (!passwordCheck)
+                return Unauthorized(new { Message = "Current password is incorrect." });
+
+            // Update the password
+            var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+
+            if (result.Succeeded)
+            {
+                return Ok(new { Message = "Password updated successfully." });
+            }
+
+            return BadRequest(new { Message = "Failed to update password.", Errors = result.Errors });
+        }
+
+
+
+        public class UpdateUsernameModel
+        {
+            public string NewUsername { get; set; }
+        }
+
+
+
+
+        public class UpdatePasswordModel
+        {
+            public string CurrentPassword { get; set; }
+            public string NewPassword { get; set; }
+        }
+
+
+
+
+
+
+
 
 
     }

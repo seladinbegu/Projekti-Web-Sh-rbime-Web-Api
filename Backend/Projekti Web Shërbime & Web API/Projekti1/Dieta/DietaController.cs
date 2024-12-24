@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Projekti1.Data;
 using Projekti1.Models;
@@ -6,6 +7,8 @@ namespace Projekti1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
+
     public class DietaController : ControllerBase
     {
         private readonly DietaDbContext _context;
@@ -17,6 +20,7 @@ namespace Projekti1.Controllers
 
         // Get all diets
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Get()
         {
             var dieta = _context.Dieta.ToList().Select(s => s.toDietaDto());

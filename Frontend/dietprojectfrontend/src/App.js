@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header"; // Import your header component
 import Footer from "./Components/Footer"; // Import your footer component
 import Ushqimi from "./Pages/Ushqimi"; // Import page components
@@ -13,13 +13,22 @@ import Profile from './Pages/Profile';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Dieta from './Pages/Dieta';
+import Receta from './Pages/Receta';
+import RecetaDetail from './Pages/RecetaDetails';
+import UshqimiForUser from './Pages/UshqimiForUser';
+import RecetaForUser from './Pages/RecetaForUser';
+import DietaForUser from './Pages/DietaForUser';
+import Settings from './Pages/Settings';
+import CookieConsent from './Components/CookieConsent';
 
 
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return !!document.cookie.includes('authToken'); // Example for cookies
+  });
+    const [username, setUsername] = useState('');
   const [role, setRole] = useState(''); // New state for role
   const [loading, setLoading] = useState(true);
   const [redirect, setRedirect] = useState(false); // State to handle redirection
@@ -37,6 +46,7 @@ function App() {
         console.error('Error fetching user ID:', error);
       }
     }
+    
   }, [username]);
 
   useEffect(() => {
@@ -67,7 +77,7 @@ function App() {
     Cookies.remove('role'); // Remove role from cookies
 
     setRedirect(true);  // Trigger redirect
-    Navigate('/');
+    window.location.href = '/'; // This will navigate to the homepage and reload the page
   };
 
   const handleLogin = async (username, password) => {
@@ -119,12 +129,14 @@ function App() {
 
   // Redirect to login page if logged out
   if (redirect) {
-    Navigate("/login"); // Use navigate directly here instead of Navigate component
+    window.location.href = '/login'; // This will navigate to the homepage and reload the page
     return null;  // Return nothing since navigation happens
   }
 
   return (
     <Router>
+              <CookieConsent /> {/* Render the CookieConsent component */}
+
       <Header 
         isLoggedIn={isLoggedIn} 
         handleLogout={handleLogout} 
@@ -141,6 +153,19 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/dieta" element={<Dieta />} />
+          <Route path="/receta" element={<Receta username={username}/>} />
+          <Route path="/receta/:id" element={<RecetaDetail />} /> {/* New route */}
+          <Route path="/ushqimiforuser" element={<UshqimiForUser/>} />
+          <Route path="/recetaforuser" element={<RecetaForUser username={username}/>} />
+          <Route path="/dietaforuser" element={<DietaForUser />} />
+          <Route path="/settings" element={<Settings  handleLogout={handleLogout} />} />
+
+
+
+
+
+
+
         </Routes>
       </div>
       <Footer />
